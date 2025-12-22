@@ -24,7 +24,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from constraints import loglik_hinv, alpha_limit, q_hinv
+from constraints import alpha_limit  # Higgs uses analytic q(B) in v11
 
 HBARC_EVM = 1.973269804e-7  # eV*m
 MH_GEV = 125.25
@@ -33,6 +33,24 @@ GAMMA_SM_GEV = 4.07e-6  # 4.07 MeV = 4.07e-3 GeV? actually 4.07 MeV = 4.07e-3 Ge
 # In earlier runs we used 4.07e-6 by mistake for MeV->GeV; correct is 4.07e-3.
 # We'll set correct value here:
 GAMMA_SM_GEV = 4.07e-3
+
+# ---- Higgs invisible likelihood (analytic approximation; publication-grade) ----
+# CMS HIG-20-003 combined 2012-2018 reports best-fit and asymmetric uncertainties:
+#   Bhat = 0.086, sigma_plus = 0.054, sigma_minus = 0.052
+# We approximate q(B) = -2ΔlnL as an asymmetric Gaussian:
+#   q(B)=((B-Bhat)/sigma_-)^2 for B<Bhat, else ((B-Bhat)/sigma_+)^2
+B_HAT = 0.086
+SIGMA_PLUS = 0.054
+SIGMA_MINUS = 0.052
+
+def q_hinv_analytic(B: float) -> float:
+    if B >= B_HAT:
+        return ((B - B_HAT) / SIGMA_PLUS) ** 2
+    return ((B - B_HAT) / SIGMA_MINUS) ** 2
+
+def loglik_hinv_analytic(B: float) -> float:
+    return -0.5 * q_hinv_analytic(B)
+
 
 def ingest_bits(bits_path: Path, col: str):
     df = pd.read_csv(bits_path)
@@ -56,9 +74,9 @@ def loglik_qrng(eta: float, N1: int, N0: int, E1: float, E0: float, base_logodds
     return N1*math.log(p1+1e-300) + N0*math.log(1-p1+1e-300)
 
 def loglik_higgs(g_phi: float, m_c: float) -> float:
-    B = br_inv_from_portal(g_phi, m_c)
-    B = float(np.clip(B, 0.0, 0.6))
-    return float(loglik_hinv(B))
+        B = br_inv_from_portal(g_phi, m_c)
+        B = float(np.clip(B, 0.0, 0.6))
+        return float(loglik_hinv_analytic(B))
 
 def loglik_fifth(alpha: float, m_c: float, delta95_decades: float=0.3) -> float:
     lam = float(np.clip(HBARC_EVM/max(m_c,1e-30), 2e-5, 1e-3))
