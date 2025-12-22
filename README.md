@@ -8,7 +8,7 @@
 **📦 Canonical DOI:** [10.5281/zenodo.18012506](https://zenodo.org/records/18012506)  
 **⚙️ Reproduce:** `python reproduce_all.py` (one command)
 
-[![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
+[![Zenodo](https://zenodo.org/badge/DOI/10.5281/zenodo.18012506.svg)](https://doi.org/10.5281/zenodo.18012506)
 [![Zenodo](https://zenodo.org/badge/DOI/10.5281/zenodo.18012506.svg)](https://doi.org/10.5281/zenodo.18012506)
 [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC--BY--4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
@@ -134,12 +134,12 @@ python mqgt_manifest_sign.py --verify --run-dir ../../data/processed/runs/run_YY
 If you use this work, please cite:
 
 ```bibtex
-@article{baird2025mqgt,
+@software{baird2025mqgt,
   title={Operational Constraints on Ethically-Weighted Quantum Measurement: A Multi-Channel Effective Field Theory Analysis},
   author={Baird, Christopher Michael},
-  journal={arXiv preprint arXiv:XXXX.XXXXX},
   year={2025},
-  doi={10.5281/zenodo.XXXXXXX}
+  url={https://github.com/Cbaird26/MQGT-SCF},
+  doi={10.5281/zenodo.18012506}
 }
 ```
 
