@@ -33,7 +33,7 @@ MQGT-SCF/
 
 ```bash
 # Clone repository
-git clone https://github.com/[your-username]/MQGT-SCF.git
+git clone https://github.com/Cbaird26/MQGT-SCF.git
 cd MQGT-SCF
 
 # Create conda environment
