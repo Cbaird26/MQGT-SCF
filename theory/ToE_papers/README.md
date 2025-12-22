@@ -14,8 +14,9 @@ This directory contains the complete Theory of Everything papers that provide th
    - Full mathematical derivations
    - Field theory foundations
 
-3. **A Theory of Everything - C.M. Baird., Et al - Revised.pdf**
-   - Revised version with updates and corrections
+3. **A Theory of Everything - C.M. Baird., Et al (2025).pdf** (24 MB, 4824 pages)
+   - Complete 2025 version with full theoretical framework
+   - 4824 pages of comprehensive derivations
 
 ## Relationship to MQGT-SCF
 
