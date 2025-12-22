@@ -2,6 +2,8 @@
 
 This document explicitly lists all theoretical assumptions underlying the MQGT-SCF framework.
 
+**Note:** For complete theoretical derivations, see the full Theory of Everything papers in `ToE_papers/`.
+
 ## Core Assumptions
 
 ### 1. Effective Field Theory Framework

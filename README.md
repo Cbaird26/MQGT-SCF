@@ -16,6 +16,7 @@ We investigate a class of effective modifications to quantum measurement in whic
 MQGT-SCF/
 ├── paper/              # Main manuscript and supplement
 ├── theory/             # Theoretical derivations and assumptions
+│   └── ToE_papers/    # Complete Theory of Everything papers
 ├── code/               # All computational code
 │   ├── inference/      # Bayesian inference harnesses
 │   └── simulations/    # Field dynamics simulations
