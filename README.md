@@ -47,7 +47,19 @@ We investigate a class of effective modifications to quantum measurement in whic
 2. **For LaTeX:** Click the file to view, or click "Raw" to download
 3. **For directories:** Click folder names to browse, then click individual files
 
-**All equations, derivations, and complete theory are in the PDFs above. The LaTeX source contains all mathematical formulations.**
+**All equations, derivations, and complete theory are accessible in multiple formats:**
+
+- **Text Format (Recommended for Automated Readers):**
+  - [ToE Key Equations](theory/ToE_key_equations.md) - All Lagrangians, field equations, quantization
+  - [ToE Canonical Variants](theory/ToE_canonical_variants.md) - Canon-A vs Canon-B specifications
+  - [ToE Summary](theory/ToE_summary.md) - Executive summary
+
+- **PDF Format (Complete Details):**
+  - Full 4,824+ page PDFs in `theory/ToE_papers/` directory
+  - Main paper and supplement PDFs in `paper/` directory
+
+- **LaTeX Source:**
+  - Complete LaTeX source in `paper/main.tex` and `paper/supplement.tex`
 
 ## Repository Structure
 
