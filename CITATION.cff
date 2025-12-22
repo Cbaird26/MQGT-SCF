@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Baird
+    given-names: Christopher Michael
+title: "MQGT-SCF: Merged Quantum Gauge and Scalar Consciousness Framework"
+version: 1.0.0
+date-released: 2025-12-22
+doi: 10.5281/zenodo.XXXXXXX
+repository-code: "https://github.com/[your-username]/MQGT-SCF"
+license: CC-BY-4.0
+keywords:
+  - quantum measurement
+  - effective field theory
+  - consciousness
+  - Bayesian inference
+  - reproducibility
+

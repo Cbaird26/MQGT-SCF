@@ -1,0 +1,52 @@
+{
+  "higgs": {
+    "Bhat": 0.086,
+    "sigma_plus": 0.054,
+    "sigma_minus": 0.052,
+    "published_95CL_limit_Binv": 0.18,
+    "posterior_gphi_median": 0.0040894350509724465,
+    "posterior_gphi_95": 0.006511746604629299,
+    "posterior_gphi_97p5": 0.00692304003882842,
+    "assumptions": {
+      "gphi_prior": "Uniform(0,0.01)",
+      "mS_eV_for_mapping": 0.0001,
+      "Gamma_SM_GeV": 0.00407,
+      "m_h_GeV": 125.25,
+      "v_GeV": 246.0,
+      "portal_definition": "L \u2283 - g_phi S^2 H\u2020H (so \u03bb_{hSS}=2 g_phi v)"
+    },
+    "analytic_qB": {
+      "Bhat": 0.086,
+      "sigma_plus": 0.054,
+      "sigma_minus": 0.052
+    },
+    "posterior_gphi_95_analytic": 0.006511782691056625,
+    "posterior_gphi_97p5_analytic": 0.006923117653732636
+  },
+  "qrng": {
+    "sigma_eta_formula": "sigma_eta \u2248 2/(sqrt(N)*DeltaE) for small eta, two-outcome case",
+    "example_N": 10000000.0,
+    "example_sigma_eta": 0.0006324555320336759
+  },
+  "fifth_force": {
+    "alpha1_lambda_um_95CL": 38.6,
+    "translated_mass_meV": 5.112097937823835,
+    "digitized_envelope_file": "figures/fig_fifth_force_envelope_digitized.png"
+  },
+  "cosmology": {
+    "mu": [
+      -0.8398917432213769,
+      -0.6510101558269732
+    ],
+    "Sigma": [
+      [
+        0.006062232808470571,
+        -0.021625309978192273
+      ],
+      [
+        -0.021625309978192273,
+        0.1312369469376079
+      ]
+    ]
+  }
+}

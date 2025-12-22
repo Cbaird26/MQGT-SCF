@@ -1,0 +1,233 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Operational Constraints on Ethically-Weighted Quantum Measurement:\\
+A Multi-Channel Effective Field Theory Analysis}
+\author{Christopher Michael Baird}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We investigate a class of effective modifications to quantum measurement in which outcome probabilities are weakly biased by an auxiliary scalar label that encodes ``ethical'' or valence-like structure. We formulate the proposal in an explicitly operational way, and embed it within a conservative effective field theory (EFT) extension of the Standard Model and General Relativity that admits a clean decoupling limit. We derive likelihood-level predictions for three experimentally independent channels: (i) quantum random number generators (QRNGs), (ii) invisible Higgs decays via a Higgs-portal coupling, and (iii) short-range tests of Newtonian gravity parameterized by Yukawa deviations. Using published results for Higgs invisible branching fractions and short-range inverse-square-law tests, we obtain conservative constraints on the corresponding EFT couplings and force ranges. We emphasize transparent statistical assumptions and provide a reproducibility package (hash manifests and verification scripts) suitable for preregistration and third-party audit.
+\end{abstract}
+
+\section{Introduction}
+The Born rule is the central probabilistic postulate of quantum mechanics: given a state expanded in an orthonormal measurement basis $\{ |i\rangle \}$ as $|\psi\rangle=\sum_i c_i |i\rangle$, the probability of outcome $i$ is $P(i)=|c_i|^2$. While extraordinarily successful, the Born rule is, operationally, an empirical law. A broad research program asks whether small deviations from standard measurement statistics might be detectable, or at least bounded, by experiments. Examples include dynamical collapse models and phenomenological tests of non-standard measurement rules.
+
+This work considers a specific \emph{operational} deformation of the Born rule motivated by the hypothesis that outcomes can be weakly biased by a scalar ``valence'' label $E_i$ assigned to each outcome. The interpretation of $E_i$ is deliberately left minimal: it is a real number that can encode, in principle, any externally specified classification of outcomes. The central question is then straightforward and testable:
+\begin{quote}
+Do measured frequencies exhibit deviations consistent with a fixed outcome-label bias parameter?
+\end{quote}
+
+We proceed in three steps. First, we define an ethically-weighted measurement rule and derive the corresponding inference problem for QRNG data. Second, we embed the bias within a conservative EFT framework by coupling a real scalar $S$ to the Higgs sector (a standard portal construction) and constrain the portal coupling with invisible Higgs decay limits. Third, we connect a light mediator to the standard Yukawa parameterization of short-range gravity tests and incorporate laboratory constraints.
+
+\section{Ethically-Weighted Measurement Rule}
+We define the ethically-weighted Born rule:
+\begin{equation}
+P(i) \;=\; \frac{|c_i|^2 \, e^{\eta E_i}}{\sum_j |c_j|^2 \, e^{\eta E_j}},
+\label{eq:ewborn}
+\end{equation}
+where $\eta$ is a real coupling parameter and $E_i\in\mathbb{R}$ is a pre-assigned outcome label. The standard Born rule is recovered for $\eta\to 0$.
+
+For a two-outcome experiment with labels $E_1, E_0$ and baseline amplitudes $|c_1|^2=|c_0|^2=\tfrac12$,
+\begin{equation}
+\log\frac{P(1)}{P(0)} = \eta (E_1-E_0).
+\label{eq:logodds}
+\end{equation}
+In the small-$\eta$ regime, $P(1)\approx \tfrac12 + \eta\Delta E/4$ with $\Delta E=E_1-E_0$.
+
+\subsection{QRNG likelihood and sensitivity scaling}
+Given $N$ independent trials with $N_1$ outcomes labeled ``1'', the likelihood is binomial:
+\begin{equation}
+\mathcal{L}(\eta \mid N_1,N) \propto P(1)^{N_1} [1-P(1)]^{N-N_1},
+\end{equation}
+with $P(1)$ computed from Eq.~\eqref{eq:ewborn}. A convenient estimator in the balanced-amplitude case is
+\begin{equation}
+\hat\eta \approx \frac{2(N_1-N_0)}{N \Delta E},
+\end{equation}
+and the binomial (shot-noise) sensitivity scales as
+\begin{equation}
+\sigma_\eta \approx \frac{2}{\sqrt{N}\,\Delta E}.
+\label{eq:sigmaeta}
+\end{equation}
+Figure~\ref{fig:qrng} shows the scaling of Eq.~\eqref{eq:sigmaeta}.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.72\linewidth]{figures/fig_qrng_sensitivity.png}
+\caption{Approximate QRNG sensitivity scaling for the ethically-weighted parameter $\eta$ (balanced two-outcome case, $\Delta E=1$).}
+\label{fig:qrng}
+\end{figure}
+
+\section{EFT Embedding and Collider Constraint}
+We now embed the framework in a conservative EFT extension that supports collider constraints. Consider a real scalar $S$ with a Higgs-portal interaction
+\begin{equation}
+\mathcal{L}_{\mathrm{portal}} = - g_\phi \, S^2 \, H^\dagger H,
+\label{eq:portal}
+\end{equation}
+where $H$ is the Standard Model Higgs doublet and $g_\phi$ is dimensionless. After electroweak symmetry breaking, $H^\dagger H = (v+h)^2/2$ generates an $hS^2$ coupling with effective vertex $\lambda_{hSS}=2g_\phi v$ (in the convention $\mathcal{L}\supset -\tfrac12 \lambda_{hSS} h S^2$).
+
+For $m_S < m_h/2$, the Higgs partial width to invisible scalars is
+\begin{equation}
+\Gamma(h\to SS)=\frac{g_\phi^2 v^2}{8\pi m_h}\sqrt{1-\frac{4m_S^2}{m_h^2}}.
+\label{eq:hsswidth}
+\end{equation}
+The invisible branching fraction is $B_{\mathrm{inv}}=\Gamma_{\mathrm{inv}}/(\Gamma_{\mathrm{SM}}+\Gamma_{\mathrm{inv}})$. We use $\Gamma_{\mathrm{SM}}\simeq 4.07~\mathrm{MeV}$ for the Standard Model Higgs total width.
+
+\subsection{CMS HIG-20-003 constraint}
+CMS reports a combined 2012--2018 limit $B(H\to \mathrm{inv})<0.18$ at 95\% CL (assuming Standard Model production) and a best-fit value $B(H\to \mathrm{inv})=0.086^{+0.054}_{-0.052}$ \cite{CMS_HIG20_003}. We approximate the published one-dimensional profile likelihood ratio with an asymmetric Gaussian in $B$:
+\begin{equation}
+q(B)\approx
+\begin{cases}
+\left(\frac{B-B_{\hat{}}}{\sigma_-}\right)^2 & B<B_{\hat{}}\\[4pt]
+\left(\frac{B-B_{\hat{}}}{\sigma_+}\right)^2 & B\ge B_{\hat{}}
+\end{cases},
+\end{equation}
+with $(B_{\hat{}},\sigma_+,\sigma_-)=(0.086,0.054,0.052)$. Figure~\ref{fig:hinvq} shows this approximation.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.72\linewidth]{figures/fig_hinv_qB_approx.png}
+\caption{Approximate CMS profile likelihood scan $q(B)$ using the reported best fit and asymmetric uncertainties for the 2012--2018 combination \cite{CMS_HIG20_003}. The dashed line marks the published 95\% CL upper limit $B=0.18$.}
+\label{fig:hinvq}
+\end{figure}
+
+\subsection{Constraint on $g_\phi$}
+Assuming a uniform prior on $g_\phi\in[0,0.01]$ and a light scalar mass $m_S\ll m_h/2$, we map $g_\phi\mapsto B_{\mathrm{inv}}$ via Eq.~\eqref{eq:hsswidth} and form the posterior $p(g_\phi)\propto \exp[-q(B(g_\phi))/2]$. Figures~\ref{fig:gpost} and \ref{fig:bmap} show the resulting posterior and mapping. We obtain the conservative 95\% (97.5\%) credible upper bounds
+\begin{equation}
+g_\phi < 6.5\times 10^{-3}\quad (6.9\times 10^{-3}),
+\end{equation}
+under the stated prior and likelihood approximation.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.72\linewidth]{figures/fig_hinv_gphi_posterior.png}
+\caption{Posterior for the Higgs-portal coupling $g_\phi$ under the approximate CMS likelihood and a uniform prior on $g_\phi\in[0,0.01]$.}
+\label{fig:gpost}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.72\linewidth]{figures/fig_hinv_B_vs_gphi.png}
+\caption{Mapping from the portal coupling $g_\phi$ to $B(H\to\mathrm{inv})$ for $m_S\ll m_h/2$. The dashed line indicates the CMS 95\% CL upper limit $B=0.18$ \cite{CMS_HIG20_003}.}
+\label{fig:bmap}
+\end{figure}
+
+\section{Short-Range Gravity: Yukawa Deviations}
+Laboratory tests of the inverse-square law constrain additional Yukawa contributions to the Newtonian potential:
+\begin{equation}
+V(r)=-\frac{Gm_1m_2}{r}\left[1+\alpha\,e^{-r/\lambda}\right],
+\label{eq:yukawa}
+\end{equation}
+where $\alpha$ is the strength relative to gravity and $\lambda$ is the force range (often $\lambda=\hbar c/m$ for a mediator of mass $m$).
+
+Lee \emph{et al.} performed a torsion-balance test down to $52~\mu$m and report that any \emph{gravitational-strength} Yukawa interaction (i.e.\ $|\alpha|=1$) must satisfy $\lambda<38.6~\mu$m at 95\% confidence \cite{Lee2020ISL}. Figure~\ref{fig:ff} illustrates this bound. Translating $\lambda$ into a mediator mass gives
+\begin{equation}
+m \gtrsim \frac{\hbar c}{\lambda} \approx 5.1~\mathrm{meV}\qquad (\alpha=1\ \text{case}).
+\end{equation}
+More general limits $|\alpha|(\lambda)$ can be incorporated directly by digitizing the published exclusion envelope; we treat that extension as a straightforward add-on to the present analysis.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.72\linewidth]{figures/fig_fifth_force_alpha1.png}
+\caption{Illustrative short-range gravity constraint in Yukawa form: Lee \emph{et al.} require $\lambda<38.6~\mu$m for gravitational-strength interactions ($|\alpha|=1$) at 95\% confidence \cite{Lee2020ISL}.}
+\label{fig:ff}
+\end{figure}
+
+\subsection{Digitized exclusion envelope}
+For joint multi-channel inference, one can incorporate the full published exclusion envelope $\alpha_{\max}(\lambda)$ by digitization.
+Figure~\ref{fig:ffenv} shows the digitized envelope used in the accompanying inference harness.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.78\linewidth]{figures/fig_fifth_force_envelope_digitized.png}
+\caption{Digitized short-range gravity exclusion envelope $\alpha_{\max}(\lambda)$ used for confidence-mapped likelihood construction in the inference harness.}
+\label{fig:ffenv}
+\end{figure}
+
+\section{Cosmological constraint (w$_0$--w$_a$)}
+To incorporate cosmological expansion constraints in a minimally assumption-heavy way, we approximate the published joint constraints on $(w_0,w_a)$ by a correlated Gaussian with mean $\mu$ and covariance $\Sigma$ inferred from a reported confidence contour. Figure~\ref{fig:cosmoellipse} illustrates the implied 68\% and 95\% ellipses.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.70\linewidth]{figures/fig_cosmo_w0wa_ellipse.png}
+\caption{Illustrative correlated-Gaussian approximation to published $(w_0,w_a)$ constraints, shown as 68\% and 95\% confidence ellipses.}
+\label{fig:cosmoellipse}
+\end{figure}
+
+\section{Discussion}
+The ethically-weighted measurement rule of Eq.~\eqref{eq:ewborn} is operationally well-defined once the outcome labels $E_i$ are fixed \emph{prior} to data collection. The QRNG channel provides the cleanest direct probe of the parameter $\eta$, but Eq.~\eqref{eq:sigmaeta} makes explicit that reaching extremely small values of $\eta$ is shot-noise limited unless $\Delta E$ can be operationally amplified.
+
+Collider and fifth-force channels constrain complementary aspects of a conservative EFT embedding. Invisible Higgs decays bound the Higgs-portal coupling $g_\phi$ for light scalars, while short-range gravity bounds the range and strength of Yukawa-like deviations. Importantly, these constraints can be applied regardless of any ``ethical'' interpretation: they are constraints on the EFT degrees of freedom required by one natural embedding of the framework.
+
+\section{Reproducibility}
+
+All numerical results in this work are generated by an open inference harness. The repository contains the full likelihood construction, priors, sampling code, digitized experimental inputs, and reproducibility manifests. Each run is accompanied by a cryptographic hash manifest and public attestation string to ensure result integrity.
+
+\subsection{Inference Harness}
+
+The joint multi-channel analysis uses a Bayesian framework with the following components:
+
+\begin{itemize}
+    \item \textbf{Priors:} Uniform on $g_\phi \in [0, 0.01]$, conservative bounds on $\eta$ and $m_S$ (see config files)
+    \item \textbf{Likelihood:} 
+    \begin{itemize}
+        \item Binomial for QRNG channel with ethically-weighted probabilities
+        \item Asymmetric Gaussian approximation to CMS profile likelihood for $B(H\to\mathrm{inv})$
+        \item Exclusion-based likelihood from digitized envelope for fifth-force constraints
+        \item Correlated Gaussian for cosmological $(w_0, w_a)$ constraints (if included)
+    \end{itemize}
+    \item \textbf{Sampling:} Metropolis-Hastings MCMC with 10,000 samples, 1,000 warmup
+    \item \textbf{Digitized Data:} CMS HIG-20-003 \cite{CMS_HIG20_003}, Lee et al. \cite{Lee2020ISL}
+\end{itemize}
+
+\subsection{Manifest System}
+
+Each computational run produces:
+\begin{itemize}
+    \item \textbf{manifest.json:} SHA-256 hashes of all input files (configs, data), output files (samples, summaries), code versions, and timestamps
+    \item \textbf{receipt.json:} Signed attestation string for result integrity
+    \item \textbf{joint\_samples.csv:} MCMC samples (parameter chains)
+    \item \textbf{joint\_summary.json:} Summary statistics (medians, credible intervals, effective sample sizes, convergence diagnostics)
+\end{itemize}
+
+These enable third-party verification that published results match the archived code and data. The attestation string for the published run is provided in the reproducibility package.
+
+\subsection{Reproducibility Package}
+
+The complete reproducibility package is archived on Zenodo (DOI: [TO BE ADDED]) and includes:
+\begin{itemize}
+    \item All inference harnesses (\texttt{mqgt\_qrng\_harness.py}, \texttt{mqgt\_joint\_harness.py})
+    \item Manifest signing and verification tools (\texttt{mqgt\_manifest\_sign.py})
+    \item Digitized experimental constraints
+    \item Run outputs with manifests and receipts
+    \item Complete documentation
+\end{itemize}
+
+To reproduce results:
+\begin{enumerate}
+    \item Install dependencies: \texttt{pip install numpy scipy matplotlib pandas numba}
+    \item Run inference: \texttt{python mqgt\_joint\_harness.py run --config joint\_config\_template.json}
+    \item Verify integrity: \texttt{python mqgt\_manifest\_sign.py --verify}
+\end{enumerate}
+
+See the \texttt{reproducibility/README.md} in the package for detailed instructions.
+
+\subsection{AI-Assisted Tooling}
+
+AI-assisted tools (including Cursor IDE) were used to accelerate code generation, refactoring, and documentation. All model choices, assumptions, priors, likelihood constructions, and interpretations were specified and verified by the author. This disclosure follows standard practice for computational physics and is analogous to disclosing use of Mathematica, GitHub Copilot, or AutoML frameworks.
+
+\section{Conclusion}
+We presented a conservative, operational deformation of the Born rule with a scalar outcome-label bias, embedded it in an EFT framework with a Higgs-portal scalar, and derived constraints from published collider and short-range gravity results. The resulting bounds restrict portal couplings and force ranges under transparent assumptions, while QRNG tests provide a direct route to constraining the measurement-bias parameter $\eta$ itself. The framework is thus positioned for falsifiable, preregistered experimental tests with auditable inference.
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+\end{document}
+

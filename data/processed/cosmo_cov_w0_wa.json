@@ -1,0 +1,18 @@
+{
+  "mu": {
+    "w0": -0.8398917432213769,
+    "wa": -0.6510101558269732
+  },
+  "Sigma": [
+    [
+      0.006062232808470571,
+      -0.021625309978192273
+    ],
+    [
+      -0.021625309978192273,
+      0.1312369469376079
+    ]
+  ],
+  "rho": -0.7666867836179567,
+  "note": "Estimated by digitizing magenta contour from Brout et al. 2022 Fig. 12 (Pantheon+ & Planck & allBAO). Assumes 68% contour corresponds to chi2=2.30."
+}

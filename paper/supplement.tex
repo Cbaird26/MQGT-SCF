@@ -1,0 +1,30 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Supplementary Material:\\Operational Constraints on Ethically-Weighted Quantum Measurement}
+\author{Christopher Michael Baird}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Higgs invisible likelihood approximation}
+CMS reports a best-fit invisible branching fraction and asymmetric uncertainties for the 2012--2018 combination \cite{CMS_HIG20_003}. In the main text we approximate the one-dimensional profile likelihood ratio by an asymmetric Gaussian in the scanned parameter $B$:
+\[
+q(B)\approx
+\begin{cases}
+\left(\frac{B-B_{\hat{}}}{\sigma_-}\right)^2 & B<B_{\hat{}}\\[4pt]
+\left(\frac{B-B_{\hat{}}}{\sigma_+}\right)^2 & B\ge B_{\hat{}}
+\end{cases}.
+\]
+This reproduces the published 95\% CL upper limit to good approximation and avoids reliance on plot digitization.
+
+\section{QRNG shot-noise scaling}
+For a balanced two-outcome QRNG (Born baseline $P(1)=P(0)=1/2$) and a small log-odds shift $\eta\Delta E$, the induced probability shift is $\delta p \approx \eta\Delta E/4$. The count difference $N_1-N_0$ has standard deviation $\sqrt{N}$ at $p=1/2$, yielding $\sigma_\eta\approx 2/(\sqrt{N}\Delta E)$ as used in Eq.~(9) of the main text.
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+\end{document}
