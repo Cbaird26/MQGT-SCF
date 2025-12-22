@@ -107,6 +107,10 @@ python mqgt_manifest_sign.py --verify --run-dir ../../data/processed/runs/run_YY
 ## Documentation
 
 - **Theory**: See `theory/` for derivations and assumptions
+  - **[ToE Key Equations](theory/ToE_key_equations.md)** - All Lagrangians and field equations (text format)
+  - **[ToE Canonical Variants](theory/ToE_canonical_variants.md)** - Canon-A and Canon-B specifications
+  - **[ToE Summary](theory/ToE_summary.md)** - Executive summary of complete theory
+  - **[ToE Full Papers](theory/ToE_papers/)** - Complete 4,824+ page PDFs
 - **Code**: See `code/` README files for implementation details
 - **Reproducibility**: See `notebooks/` for step-by-step guides
 - **Data**: See `data/README.md` for data sources and processing
