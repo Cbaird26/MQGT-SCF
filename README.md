@@ -2,13 +2,15 @@
 
 **Operational Constraints on Ethically-Weighted Quantum Measurement: A Multi-Channel Effective Field Theory Analysis**
 
+## 🔑 Quick Access
+
+**📄 Read the Paper:** [paper.md](paper.md) (full text, readable by all tools)  
+**📦 Canonical DOI:** [10.5281/zenodo.18012506](https://zenodo.org/records/18012506)  
+**⚙️ Reproduce:** `python reproduce_all.py` (one command)
+
 [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
 [![Zenodo](https://zenodo.org/badge/DOI/10.5281/zenodo.18012506.svg)](https://doi.org/10.5281/zenodo.18012506)
 [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC--BY--4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-
-**Canonical Citation:** DOI [10.5281/zenodo.18012506](https://zenodo.org/records/18012506)  
-**Read the Paper:** [paper.md](paper.md) (full text) | [PDF Download](https://github.com/Cbaird26/MQGT-SCF/raw/main/paper/MQGT_paper_main_v2.pdf)  
-**Reproduce Results:** `python reproduce_all.py` (one command)
 
 ## Abstract
 
