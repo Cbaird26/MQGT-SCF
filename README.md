@@ -2,156 +2,138 @@
 
 **Operational Constraints on Ethically-Weighted Quantum Measurement: A Multi-Channel Effective Field Theory Analysis**
 
-## 🔑 Quick Access
-
-**📄 Read the Paper:** [paper.md](paper.md) (full text, readable by all tools)  
-**📦 Canonical DOI:** [10.5281/zenodo.18012506](https://zenodo.org/records/18012506)  
-**⚙️ Reproduce:** `python reproduce_all.py` (one command)
-
-[![Zenodo](https://zenodo.org/badge/DOI/10.5281/zenodo.18012506.svg)](https://doi.org/10.5281/zenodo.18012506)
 [![Zenodo](https://zenodo.org/badge/DOI/10.5281/zenodo.18012506.svg)](https://doi.org/10.5281/zenodo.18012506)
 [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC--BY--4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-## Abstract
+## Overview
 
-We investigate a class of effective modifications to quantum measurement in which outcome probabilities are weakly biased by an auxiliary scalar label that encodes "ethical" or valence-like structure. We formulate the proposal in an explicitly operational way, and embed it within a conservative effective field theory (EFT) extension of the Standard Model and General Relativity that admits a clean decoupling limit. We derive likelihood-level predictions for three experimentally independent channels: (i) quantum random number generators (QRNGs), (ii) invisible Higgs decays via a Higgs-portal coupling, and (iii) short-range tests of Newtonian gravity parameterized by Yukawa deviations.
-
-## 🔍 HOW TO ACCESS ALL FILES (For Reviewers)
-
-**⚠️ IMPORTANT: GitHub doesn't render PDFs inline. You must download them using the links below or click "Download" on any PDF file.**
-
-### Direct Download Links to Key Files:
-
-**📄 Main Paper (Operational MQGT-SCF):**
-- **[Download Main Paper PDF (665 KB)](https://github.com/Cbaird26/MQGT-SCF/raw/main/paper/MQGT_paper_main_v2.pdf)** - Operational constraints paper
-- **[Download Supplement PDF (159 KB)](https://github.com/Cbaird26/MQGT-SCF/raw/main/paper/MQGT_paper_supplement_v2.pdf)** - Supplementary material
-- **[View LaTeX Source](https://github.com/Cbaird26/MQGT-SCF/blob/main/paper/main.tex)** - Complete LaTeX source code
-
-**📚 Complete Theory of Everything Papers (Full Theoretical Foundation):**
-- **[ToE + Experiment (24 MB, 4,800+ pages)](https://github.com/Cbaird26/MQGT-SCF/raw/main/theory/ToE_papers/A%20Theory%20of%20Everything%20%2B%20Experiment%20-%20Baird.%2C%20Et%20al%20(2025).pdf)** - Complete theory with experimental proposals
-- **[ToE - Baird et al (48 MB)](https://github.com/Cbaird26/MQGT-SCF/raw/main/theory/ToE_papers/A%20Theory%20of%20Everything%20-%20Baird%2C%20et%20al%20(2025).pdf)** - Core theoretical framework
-- **[ToE - C.M. Baird (24 MB, 4,824 pages)](https://github.com/Cbaird26/MQGT-SCF/raw/main/theory/ToE_papers/A%20Theory%20of%20Everything%20-%20C.M.%20Baird.%2C%20Et%20al%20(2025).pdf)** - Complete 2025 version with full derivations
-
-**💻 Code and Data:**
-- **[All Inference Code](https://github.com/Cbaird26/MQGT-SCF/tree/main/code/inference)** - Bayesian inference harnesses
-- **[Simulation Code](https://github.com/Cbaird26/MQGT-SCF/tree/main/code/simulations)** - Field dynamics simulations
-- **[Digitized Experimental Data](https://github.com/Cbaird26/MQGT-SCF/tree/main/data/processed)** - CMS, fifth-force constraints
-
-**📊 Figures:**
-- **[All Publication Figures](https://github.com/Cbaird26/MQGT-SCF/tree/main/paper/figures)** - All 10+ figures from the paper
-
-**📦 Zenodo Archive:**
-- **[Zenodo DOI: 10.5281/zenodo.18012506](https://zenodo.org/records/18012506)** - Complete archive with all files
-
-### How to Access Files on GitHub:
-
-1. **For PDFs:** Click any PDF link above, or navigate to the file and click the "Download" button (top right)
-2. **For LaTeX:** Click the file to view, or click "Raw" to download
-3. **For directories:** Click folder names to browse, then click individual files
-
-**All equations, derivations, and complete theory are accessible in multiple formats:**
-
-- **Text Format (Recommended for Automated Readers):**
-  - [ToE Key Equations](theory/ToE_key_equations.md) - All Lagrangians, field equations, quantization
-  - [ToE Canonical Variants](theory/ToE_canonical_variants.md) - Canon-A vs Canon-B specifications
-  - [ToE Summary](theory/ToE_summary.md) - Executive summary
-
-- **PDF Format (Complete Details):**
-  - Full 4,824+ page PDFs in `theory/ToE_papers/` directory
-  - Main paper and supplement PDFs in `paper/` directory
-
-- **LaTeX Source:**
-  - Complete LaTeX source in `paper/main.tex` and `paper/supplement.tex`
+The Merged Quantum Gauge and Scalar Consciousness Framework (MQGT-SCF) is an effective field theory extension of the Standard Model and General Relativity that incorporates scalar fields encoding consciousness-like and ethical structures. The framework is formulated operationally, with testable predictions across multiple experimental channels.
 
 ## Repository Structure
 
-```
-MQGT-SCF/
-├── paper/              # Main manuscript and supplement
-├── theory/             # Theoretical derivations and assumptions
-│   └── ToE_papers/    # Complete Theory of Everything papers
-├── code/               # All computational code
-│   ├── inference/      # Bayesian inference harnesses
-│   └── simulations/    # Field dynamics simulations
-├── data/               # Experimental data and constraints
-│   ├── raw/           # Original data sources
-│   └── processed/     # Digitized constraints
-├── figures/            # All publication figures
-├── notebooks/          # Reproducibility notebooks
-└── README.md          # This file
-```
+This repository contains three related papers and supporting materials:
+
+### Papers
+
+- **`papers/unified_ToE/`** - Unified Theory of Everything (operational constraints paper)
+  - Main manuscript: `paper.tex` / `paper.pdf`
+  - Supplementary material: `supplementary.tex` / `supplementary.pdf`
+  - This is the primary, testable framework with experimental constraints
+
+- **`papers/warp5A/`** - Warp-5A (precursor paper)
+  - Early formulation of consciousness field dynamics
+  - Provides foundational concepts for the unified framework
+
+- **`papers/warp5B/`** - Warp-5B (precursor paper)
+  - Extended treatment of ethical field and measurement mechanisms
+  - Complements Warp-5A and feeds into unified framework
+
+### Theory Documentation
+
+- **`theory/`** - Extracted theoretical content
+  - `lagrangian.md` - Unified Lagrangian formulation
+  - `field_equations.md` - Field equations and dynamics
+  - `collapse_mechanism.md` - Consciousness-induced collapse mechanism
+  - `teleology.md` - Teleological term and implications
+  - `glossary.md` - Notation and terminology
+
+### Code and Data
+
+- **`code/`** - Computational implementations
+  - `inference/` - Bayesian inference harnesses
+  - `simulations/` - Field dynamics simulations
+  - `notebooks/` - Reproducibility notebooks
+
+- **`data/`** - Experimental data and constraints
+  - `raw/` - Original data sources
+  - `processed/` - Digitized experimental constraints
+
+- **`experiments/`** - Experimental proposals
+  - `rng_bias/` - Quantum random number generator tests
+  - `lattice_simulations/` - Lattice field theory simulations
+  - `neural_coherence/` - Neural coherence measurements
 
 ## Quick Start
 
 ### Installation
 
 ```bash
-# Clone repository
 git clone https://github.com/Cbaird26/MQGT-SCF.git
 cd MQGT-SCF
-
-# Create conda environment
-conda env create -f environment.yml
-conda activate mqgt-scf
-
-# Or use pip
-pip install -r requirements.txt
+pip install -r code/requirements.txt
 ```
 
-### Reproducing Results
+### Reproduce Results
 
-**Reproduce main inference:**
 ```bash
-cd code/inference
-python mqgt_joint_harness.py run --config joint_config_template.json --out ../../data/processed/runs/
+python reproduce_all.py
 ```
 
-**Reproduce figures:**
-```bash
-# See notebooks/ for step-by-step figure reproduction
-jupyter notebook notebooks/reproduce_fig2.ipynb
-```
+### Read the Paper
 
-**Verify integrity:**
-```bash
-cd code/inference
-python mqgt_manifest_sign.py --verify --run-dir ../../data/processed/runs/run_YYYY-MM-DD/
-```
+- **Plain text (automated readers):** [paper.md](paper.md)
+- **PDF:** [papers/unified_ToE/paper.pdf](papers/unified_ToE/paper.pdf)
+- **LaTeX source:** [papers/unified_ToE/paper.tex](papers/unified_ToE/paper.tex)
 
-## Documentation
+## Relationship to Prior Work
 
-- **Theory**: See `theory/` for derivations and assumptions
-  - **[ToE Key Equations](theory/ToE_key_equations.md)** - All Lagrangians and field equations (text format)
-  - **[ToE Canonical Variants](theory/ToE_canonical_variants.md)** - Canon-A and Canon-B specifications
-  - **[ToE Summary](theory/ToE_summary.md)** - Executive summary of complete theory
-  - **[ToE Full Papers](theory/ToE_papers/)** - Complete 4,824+ page PDFs
-- **Code**: See `code/` README files for implementation details
-- **Reproducibility**: See `notebooks/` for step-by-step guides
-- **Data**: See `data/README.md` for data sources and processing
+The unified ToE paper (`papers/unified_ToE/`) builds upon and integrates concepts from:
+
+1. **Warp-5A** - Introduces the consciousness field $\Phi_c(x)$ and its quantization
+2. **Warp-5B** - Develops the ethical field $E(x)$ and measurement mechanisms
+
+The unified framework:
+- Provides operational, testable constraints
+- Embeds the framework in conservative EFT
+- Derives falsifiable predictions across three channels
+- Maintains consistency with all known physics
+
+See `papers/unified_ToE/paper.tex` for explicit references and relationship statements.
+
+## Novelty Claims
+
+This work introduces:
+- An operational deformation of the Born rule with ethical weighting
+- Conservative EFT embedding via Higgs-portal coupling
+- Multi-channel experimental constraints (QRNG, Higgs, fifth-force)
+- Complete reproducibility package with cryptographic verification
+
+The framework is conservative in that:
+- All new effects decouple as couplings → 0
+- Standard physics is recovered in the limit
+- No violations of known symmetries (except minuscule teleological term)
+- Compatible with all current experimental bounds
 
 ## Citation
 
-If you use this work, please cite:
-
 ```bibtex
 @software{baird2025mqgt,
-  title={Operational Constraints on Ethically-Weighted Quantum Measurement: A Multi-Channel Effective Field Theory Analysis},
-  author={Baird, Christopher Michael},
-  year={2025},
-  url={https://github.com/Cbaird26/MQGT-SCF},
-  doi={10.5281/zenodo.18012506}
+  author = {Baird, Christopher Michael},
+  title = {MQGT-SCF: Operational Constraints on Ethically-Weighted Quantum Measurement},
+  year = {2025},
+  url = {https://github.com/Cbaird26/MQGT-SCF},
+  doi = {10.5281/zenodo.18012506}
 }
 ```
 
-## Computational Assistance Disclosure
-
-Computational assistance (including large language models) was used for code refactoring, documentation, and verification of algebraic consistency. All theoretical assumptions, model structure, and interpretive claims are the author's own and independently verifiable through the provided derivations and code.
+Or use the [CITATION.cff](CITATION.cff) file for automatic citation.
 
 ## License
 
-This work is licensed under CC-BY-4.0. See LICENSE file for details.
+This work is licensed under CC-BY-4.0. See [LICENSE](LICENSE) for details.
+
+## Documentation
+
+- **Theory:** See `theory/` directory for extracted equations and derivations
+- **Experiments:** See `experiments/` for proposed tests
+- **Reproducibility:** See `code/` and `notebooks/` for reproduction guides
+- **Roadmap:** See `docs/roadmap.md` for future directions
+- **FAQ:** See `docs/faq.md` for common questions
 
 ## Contact
 
 For questions about reproducibility or the code, please open an issue or contact the author.
 
+---
+
+**Canonical DOI:** [10.5281/zenodo.18012506](https://zenodo.org/records/18012506)
