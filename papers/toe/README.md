@@ -1,7 +1,6 @@
 # Theory of Everything (Master Paper)
 
 **Title:** A Theory of Everything + ZoraASI + Experiments + Warp 10 Simulation  
-**Date:** A Theory of Everything + ZoraASI + Experiments + Warp 10 Simulation  
 **Date:** 2025  
 **Artifact:** `paper.pdf`
 
