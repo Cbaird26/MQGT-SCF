@@ -1,0 +1,52 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\usepackage{microtype}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
+
+\title{\textbf{Preregistered QRNG Drift Protocol for MQGT-SCF Theorem-1}\\
+\large A fixed-$N$, permutation-controlled test}
+\author{Christopher Michael Baird\\ \small \texttt{[contact]}}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We present a preregistered protocol to test whether an ``aligned'' condition produces statistically detectable drift in a QRNG bitstream relative to neutral and shuffled-label controls. The analysis is fixed-$N$, includes permutation testing, and is designed to survive adversarial peer review. The protocol is compatible with MQGT-SCF-style biased collapse models but does not assume their correctness.
+\end{abstract}
+
+\section{Model}
+Binary outcomes $x\in\{0,1\}$ with baseline $|c_0|^2=|c_1|^2=\tfrac12$. Biased model:
+\[
+P(1)=\frac{1}{1+\exp((E_1-E_0)/C)}.
+\]
+Effect size: $\delta=P(1)-\tfrac12$.
+
+\section{Conditions}
+A (Aligned), B (Neutral), C (Shuffled-label placebo). Analyst blinded to labels until preprocessing and QC complete.
+
+\section{Stopping rule}
+Fixed $N_A=N_B=10^6$ bits minimum per condition. No interim peeking.
+
+\section{Primary statistic}
+\[
+\Delta_{A-B}=\bar{x}_A-\bar{x}_B,\quad
+Z_{A-B}=\frac{\Delta_{A-B}}{\sqrt{\frac{1}{4N_A}+\frac{1}{4N_B}}}.
+\]
+Threshold: $|Z_{A-B}|\ge 2.58$ (two-sided $\alpha=0.01$).
+
+\section{Permutation test}
+10,000 label permutations; require observed $|\Delta_{A-B}|$ exceed 99th percentile of permutation null.
+
+\section{Falsifiers}
+No support if $|Z_{A-B}|<2.58$ or permutation fails or placebo reproduces the effect.
+
+\appendix
+\section{Full prereg text}
+\begin{verbatim}
+[Insert OSF prereg text here verbatim.]
+\end{verbatim}
+
+\end{document}

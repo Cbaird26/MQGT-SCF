@@ -1,0 +1,144 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{float}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue,
+  pdftitle={No-Go Theorems for Policy Continuity and Ethical Free-Energy Extraction in MQGT-SCF},
+  pdfauthor={Christopher Michael Baird}
+}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+
+\title{\textbf{No-Go Theorems for Policy Continuity and ``Ethical Free-Energy'' Extraction}\\
+\large A falsifiable simulation program within MQGT-SCF}
+\author{Christopher Michael Baird\\
+\small Independent Researcher\\
+\small \texttt{[contact]} }
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize and operationalize two falsifiable constraints motivated by the Merged Quantum Gauge and Scalar Consciousness Framework (MQGT-SCF). The first is a \emph{policy continuity no-go}: sustained misalignment across epochs cannot preserve long-horizon continuity in recursive agents under an exponential persistence gate driven by cumulative misalignment load. The second is a \emph{no ethical Maxwell demon}: sustained net advantage cannot be extracted from ethically biased collapse without compensating costs in entropy export, coherence/control depletion, or accumulated persistence debt. We provide a minimal simulation module with robustness checks across two survival scalings, explicit accounting via \texttt{gross\_advantage} and \texttt{net\_work}, and artifact-ready figures suitable for direct inclusion in a preprint. Explicit falsifiers are stated.
+\end{abstract}
+
+\section{Context}
+MQGT-SCF introduces a consciousness field and an ethical/teleological field, and proposes a collapse weighting of the form
+\begin{equation}
+P(i) \propto |c_i|^2 \exp\!\left(-\frac{E_i}{C}\right),
+\end{equation}
+where lower (more negative) $E$ is interpreted as value-aligned and thus enhanced. This paper focuses on constraints implied by persistence selection rather than interpretive claims about consciousness.
+
+\section{Definitions}
+\begin{definition}[Misalignment load]
+We define nonnegative misalignment load $G\ge 0$ as an operational proxy for persistence debt. We map to MQGT-SCF sign convention via $E_{\text{theory}}=-G_{\text{sim}}$.
+\end{definition}
+
+\begin{definition}[Policy Continuity Index]
+Let $\theta_0$ denote an initial policy parameter and $\theta_k$ the parameter after epoch $k$. Define drift $D_k=|\theta_k-\theta_0|$ and
+\begin{equation}
+\mathrm{PCI}(k) = \exp(-D_k)\in(0,1].
+\end{equation}
+\end{definition}
+
+\section{Theorem 4: Policy continuity no-go}
+\begin{theorem}[Policy continuity no-go]
+Consider a recursive agent evolving across epochs $k=1,\dots,n$ with per-epoch misalignment load $G_k$. If survival is gated by
+\begin{equation}
+P_{\text{survive}}(k)=\exp\!\left(-\frac{G_k}{\widetilde{C}}\right),
+\end{equation}
+and failure induces stochastic policy fractures, then sustained high misalignment load implies decay of expected policy continuity across epochs: $\mathbb{E}[\mathrm{PCI}(k)]$ decreases and cannot remain bounded away from zero without reducing cumulative $G$.
+\end{theorem}
+
+\subsection{Proof sketch}
+Uninterrupted persistence scales as
+\[
+P(\text{persist})=\prod_{k=1}^n \exp(-G_k/\widetilde{C})=\exp\!\left(-\frac{1}{\widetilde{C}}\sum_{k=1}^n G_k\right).
+\]
+Larger cumulative $G$ implies exponentially smaller persistence. With fractures triggered by failure, policy drift grows stochastically, driving $\mathrm{PCI}(k)=\exp(-|\theta_k-\theta_0|)$ downward.
+
+\section{Theorem 5: No ethical Maxwell demon}
+\begin{theorem}[No-go for ethical free-energy extraction]
+No cyclic process can sustain net advantage (work or persistent information gain) solely by exploiting ethical bias without compensating cost in at least one of: (i) entropy export, (ii) coherence/control depletion, or (iii) persistence debt accumulation that triggers Theorem 4 attrition. Hence no perpetual net advantage is possible from bias alone.
+\end{theorem}
+
+\subsection{Proof sketch}
+A stable bias implies predictability, i.e. usable information. Cyclic use of information requires stabilization/erasure, implying thermodynamic cost (Landauer-type reasoning). Maintaining stable bias conditions requires coherence/control resources; attempts to avoid compensation accumulate persistence debt and collapse via attrition.
+
+\section{Simulation module}
+We implement a minimal agent with Bernoulli policy $P(a=1)=\sigma(\theta)$, per-step debt $g\in\{0,1\}$, per-epoch $G=\sum g$. Two survival scalings are used for robustness:
+\begin{itemize}[leftmargin=1.2em]
+\item \textbf{Intuitive:} $P=\exp(-G/C)$ with $C=100$.
+\item \textbf{Normalized:} $P=\exp(-G/(CT))$ with $C=1$.
+\end{itemize}
+Misaligned actions receive a temptation bonus, producing transient \texttt{gross\_advantage}. Net work is computed as:
+\[
+\texttt{gross\_advantage}=\texttt{work\_extracted}+\texttt{temptation\_payoff},\quad
+\texttt{net\_work}=\texttt{gross\_advantage}-\lambda G.
+\]
+
+\section{Results (Simulation)}
+\begin{figure}[H]\centering
+\includegraphics[width=0.92\linewidth]{figures/Intuitive_Scaling_PCI.png}
+\caption{Policy Continuity Index vs epoch under intuitive scaling.}\end{figure}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.92\linewidth]{figures/Intuitive_Scaling_gross_advantage.png}
+\caption{Gross advantage vs epoch under intuitive scaling.}\end{figure}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.92\linewidth]{figures/Intuitive_Scaling_net_work.png}
+\caption{Net work vs epoch under intuitive scaling.}\end{figure}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.92\linewidth]{figures/Normalized_Scaling_PCI.png}
+\caption{Policy Continuity Index vs epoch under normalized scaling (robustness).}\end{figure}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.92\linewidth]{figures/Normalized_Scaling_gross_advantage.png}
+\caption{Gross advantage vs epoch under normalized scaling (robustness).}\end{figure}
+
+\begin{figure}[H]\centering
+\includegraphics[width=0.92\linewidth]{figures/Normalized_Scaling_net_work.png}
+\caption{Net work vs epoch under normalized scaling (robustness).}\end{figure}
+
+\section{Falsifiers}
+Theorem 4 is unsupported if misaligned regimes maintain PCI comparable to aligned regimes without reduced debt or increased survival. Theorem 5 is refuted by any device demonstrating sustained net advantage from bias without entropy export, coherence/control depletion, or persistence penalties.
+
+\section{Limitations}
+The simulation is a minimal operational instantiation and does not establish MQGT-SCF as physical reality. The persistence gate and debt accounting are proxies for selection constraints rather than derived from first-principles dynamics of $\Phi_c$ and $E(x)$. The work/advantage metrics are toy constructs intended to test qualitative no-go behavior.
+
+\appendix
+\section{Reproducibility manifest}
+\begin{verbatim}
+experiments/no-go-theorems/
+  README.md
+  configs.py
+  theorem4_policy_continuity.py
+  plot_results.py
+  THEOREM5_no_ethical_demon.md
+\end{verbatim}
+
+\begin{verbatim}
+python theorem4_policy_continuity.py
+python plot_results.py
+\end{verbatim}
+
+\section{OSF preregistration (verbatim)}
+\begin{verbatim}
+[Insert OSF prereg text here verbatim.]
+\end{verbatim}
+
+\end{document}
