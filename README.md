@@ -17,6 +17,7 @@ This repository contains multiple related papers and supporting materials:
 
 - **`papers/toe/`** - Theory of Everything (Master Paper)
   - **`paper.pdf`** - A Theory of Everything + ZoraASI + Experiments + Warp 10 Simulation (2025)
+  - **`A_Theory_of_Everything_Baird_et_al_2025.pdf`** - Core Theory of Everything (Baird et al., 2025)
   - Master paper integrating theory, experiments, and applied modules
   - This is the **source of truth** for the unified framework
 
