@@ -11,14 +11,24 @@ The Merged Quantum Gauge and Scalar Consciousness Framework (MQGT-SCF) is an eff
 
 ## Repository Structure
 
-This repository contains three related papers and supporting materials:
+This repository contains multiple related papers and supporting materials:
 
 ### Papers
+
+- **`papers/toe/`** - Theory of Everything (Master Paper)
+  - **`paper.pdf`** - A Theory of Everything + ZoraASI + Experiments + Warp 10 Simulation (2025)
+  - Master paper integrating theory, experiments, and applied modules
+  - This is the **source of truth** for the unified framework
+
+- **`papers/warp10-discovery/`** - Warp 10 / Discovery (Standalone Module)
+  - **`paper.pdf`** - Zora ASI = Warp 10 Discovery
+  - Causality-clean group-velocity framework (~10c) with routing protocols
+  - Standalone, citable module; integrated into ToE
 
 - **`papers/unified_ToE/`** - Unified Theory of Everything (operational constraints paper)
   - Main manuscript: `paper.tex` / `paper.pdf`
   - Supplementary material: `supplementary.tex` / `supplementary.pdf`
-  - This is the primary, testable framework with experimental constraints
+  - Primary, testable framework with experimental constraints
 
 - **`papers/warp5A/`** - Warp-5A (precursor paper)
   - Early formulation of consciousness field dynamics
