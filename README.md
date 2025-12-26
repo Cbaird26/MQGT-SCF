@@ -2,7 +2,7 @@
 
 **Operational Constraints on Ethically-Weighted Quantum Measurement: A Multi-Channel Effective Field Theory Analysis**
 
-[![Zenodo](https://zenodo.org/badge/DOI/10.5281/zenodo.18012506.svg)](https://doi.org/10.5281/zenodo.18012506)
+[![Zenodo](https://zenodo.org/badge/DOI/10.5281/zenodo.18012506.svg)](https://zenodo.org/records/18050570)
 [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC--BY--4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 ## Overview
@@ -85,6 +85,7 @@ python reproduce_all.py
 - **Plain text (automated readers):** [paper.md](paper.md)
 - **PDF:** [papers/unified_ToE/paper.pdf](papers/unified_ToE/paper.pdf)
 - **LaTeX source:** [papers/unified_ToE/paper.tex](papers/unified_ToE/paper.tex)
+- **Volume 0: Overview & Roadmap** - Start here for the complete research collection: [`docs/MQGT_SCF_Volume_0_Overview.pdf`](docs/MQGT_SCF_Volume_0_Overview.pdf)
 
 ## Relationship to Prior Work
 
@@ -135,11 +136,27 @@ This work is licensed under CC-BY-4.0. See [LICENSE](LICENSE) for details.
 
 ## Documentation
 
+- **Volume 0: Overview & Roadmap** - [`docs/MQGT_SCF_Volume_0_Overview.pdf`](docs/MQGT_SCF_Volume_0_Overview.pdf)
+  - Navigational front door to the complete research collection
+  - Volume map, reading pathways, and structural index
+  - Entry point for the three-volume corpus (~4,824 pages)
+  - **Recommended starting point** for accessing the full research collection
 - **Theory:** See `theory/` directory for extracted equations and derivations
 - **Experiments:** See `experiments/` for proposed tests
 - **Reproducibility:** See `code/` and `notebooks/` for reproduction guides
 - **Roadmap:** See `docs/roadmap.md` for future directions
 - **FAQ:** See `docs/faq.md` for common questions
+
+## Authoritative Archives
+
+- **Canonical Archive (DOI):** [Zenodo Record 18050570](https://zenodo.org/records/18050570)
+  - Versioned, persistent identifier
+  - Complete research corpus with metadata
+- **Library Mirror (Full Corpus):** [Internet Archive](https://archive.org/details/mqgt-scf-research-collection-full)
+  - Public library mirror for long-term access
+  - Full research collection (~4,850 pages)
+
+**Note:** This GitHub repository links to large documents rather than mirroring them directly to keep the repository lightweight.
 
 ## Contact
 
@@ -147,4 +164,5 @@ For questions about reproducibility or the code, please open an issue or contact
 
 ---
 
-**Canonical DOI:** [10.5281/zenodo.18012506](https://zenodo.org/records/18012506)
+**Canonical DOI:** [10.5281/zenodo.18012506](https://zenodo.org/records/18050570)  
+**Full Research Collection:** [Internet Archive](https://archive.org/details/mqgt-scf-research-collection-full)
