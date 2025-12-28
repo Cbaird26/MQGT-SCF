@@ -14,6 +14,8 @@ make test       # Run test suite
 make reproduce  # Reproduce results
 ```
 
+> **Golden test verified:** 2025-12-28 (Python 3.14.1) — `make install` and `make test` pass on clean environment.
+
 ## Where to Read First
 
 ### 📘 Volume 0: Overview & Roadmap

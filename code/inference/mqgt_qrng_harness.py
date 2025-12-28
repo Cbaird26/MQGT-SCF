@@ -18,8 +18,16 @@ Notes:
   If you need a nonzero base log-odds, pass --base_logodds.
 """
 
-import argparse, json, math, hashlib, os
+from __future__ import annotations
+
+import argparse
+import json
+import math
+import hashlib
+import os
 from pathlib import Path
+from typing import Any
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -28,6 +36,14 @@ from scipy.stats import norm
 HBARC_EVM = 1.973269804e-7  # (not used here; kept for consistency across project)
 
 def sha256_of_file(path: Path) -> str:
+    """Compute SHA256 hash of a file.
+    
+    Args:
+        path: Path to file
+    
+    Returns:
+        SHA256 hash as hex string
+    """
     h = hashlib.sha256()
     with open(path, "rb") as f:
         for chunk in iter(lambda: f.read(1<<20), b""):
@@ -37,7 +53,12 @@ def sha256_of_file(path: Path) -> str:
 def sigmoid(x: float) -> float:
     return 1.0/(1.0+math.exp(-x))
 
-def simulate_counts(N: int, eta: float, E0: float, E1: float, base_logodds: float, seed: int):
+def simulate_counts(N: int, eta: float, E0: float, E1: float, base_logodds: float, seed: int) -> tuple[int, int, float]:
+    """Simulate QRNG counts with fixed seed.
+    
+    Returns:
+        tuple[int, int, float]: (N1, N0, p1) - counts for outcome 1, outcome 0, and probability of outcome 1
+    """
     rng = np.random.default_rng(seed)
     logit = base_logodds + eta*(E1-E0)
     p1 = 1/(1+np.exp(-logit))
@@ -45,7 +66,16 @@ def simulate_counts(N: int, eta: float, E0: float, E1: float, base_logodds: floa
     N0 = int(N - N1)
     return N1, N0, float(p1)
 
-def ingest_bits(bits_path: Path, col: str):
+def ingest_bits(bits_path: Path, col: str) -> tuple[int, int, int]:
+    """Ingest bitstream from CSV file.
+    
+    Args:
+        bits_path: Path to CSV file
+        col: Column name containing bits
+    
+    Returns:
+        tuple[int, int, int]: (N1, N0, N) - counts and total
+    """
     df = pd.read_csv(bits_path)
     if col not in df.columns:
         raise ValueError(f"Column '{col}' not found in {bits_path}")
@@ -54,7 +84,23 @@ def ingest_bits(bits_path: Path, col: str):
     N0 = int(np.sum(bits==0))
     return N1, N0, int(len(bits))
 
-def posterior_grid(N1, N0, E0, E1, base_logodds, prior_mu, prior_sigma, eta_min, eta_max, n_grid):
+def posterior_grid(
+    N1: int, N0: int, E0: float, E1: float, base_logodds: float,
+    prior_mu: float, prior_sigma: float, eta_min: float, eta_max: float, n_grid: int
+) -> dict[str, np.ndarray | float | list[float]]:
+    """Compute posterior distribution for eta parameter on a grid.
+    
+    Args:
+        N1, N0: Counts for outcomes 1 and 0
+        E0, E1: Ethical weights
+        base_logodds: Base log-odds (before eta correction)
+        prior_mu, prior_sigma: Prior mean and standard deviation for eta
+        eta_min, eta_max: Grid bounds
+        n_grid: Number of grid points
+    
+    Returns:
+        dict with keys: etas, post, cdf, mean, sd, median, ci95, map
+    """
     dE = (E1-E0)
     etas = np.linspace(eta_min, eta_max, n_grid)
     logits = base_logodds + etas*dE
@@ -80,7 +126,19 @@ def posterior_grid(N1, N0, E0, E1, base_logodds, prior_mu, prior_sigma, eta_min,
         "median": median, "ci95": [lo, hi], "map": map_eta
     }
 
-def frequentist_test(N1, N0, E0, E1, alpha=0.05):
+def frequentist_test(N1: int, N0: int, E0: float, E1: float, alpha: float = 0.05) -> dict[str, float | bool]:
+    """Frequentist test for QRNG data.
+    
+    Args:
+        N1: Count of outcome 1
+        N0: Count of outcome 0
+        E0: Ethical weight for outcome 0
+        E1: Ethical weight for outcome 1
+        alpha: Significance level (default 0.05)
+    
+    Returns:
+        dict with keys: T, se, z, p_value, alpha, reject_H0
+    """
     # Statistic T = log(N1/N0). Approx var(T) ≈ 1/N1 + 1/N0
     # Under H0: mean 0.
     T = math.log((N1+1e-12)/(N0+1e-12))
@@ -88,10 +146,22 @@ def frequentist_test(N1, N0, E0, E1, alpha=0.05):
     z = T/se if se>0 else 0.0
     p = 2*(1-norm.cdf(abs(z)))
     zcrit = norm.ppf(1-alpha/2)
-    reject = abs(z) > zcrit
+    reject = bool(abs(z) > zcrit)  # Explicit bool conversion
     return {"T": T, "se": se, "z": z, "p_value": p, "alpha": alpha, "reject_H0": reject}
 
-def write_bundle(outdir: Path, meta: dict, posterior: dict, freq: dict, code_hash: str):
+def write_bundle(
+    outdir: Path, meta: dict[str, Any], posterior: dict[str, Any], 
+    freq: dict[str, Any], code_hash: str
+) -> None:
+    """Write reproducible analysis bundle to output directory.
+    
+    Args:
+        outdir: Output directory path
+        meta: Metadata dictionary
+        posterior: Posterior distribution results
+        freq: Frequentist test results
+        code_hash: SHA256 hash of analysis code
+    """
     outdir.mkdir(parents=True, exist_ok=True)
     # Save arrays
     np.savetxt(outdir/"eta_grid.csv", np.c_[posterior["etas"], posterior["post"]], delimiter=",",
