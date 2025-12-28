@@ -89,7 +89,23 @@ pip install -r requirements.txt
 pip install -e ".[dev]"
 ```
 
-### Run Tests
+### Quick Start (Makefile)
+
+```bash
+# Install dependencies (reproducible)
+make install
+
+# Run tests
+make test
+
+# Reproduce results
+make reproduce
+
+# See all commands
+make help
+```
+
+### Run Tests (Manual)
 
 ```bash
 # Install test dependencies
