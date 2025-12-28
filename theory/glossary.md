@@ -1,5 +1,9 @@
 # Glossary and Notation
 
+> **Quick Reference:** See [symbol_index.md](symbol_index.md) for a tabular index of all symbols with units and cross-references.
+
+---
+
 ## Fields
 
 - **$\Phi_c(x)$** - Consciousness field. Encodes intensity and topology of awareness.

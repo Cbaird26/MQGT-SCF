@@ -20,6 +20,14 @@ Thank you for your interest in contributing to the MQGT-SCF research program!
 6. Push to your branch (`git push origin feature/amazing-feature`)
 7. Open a Pull Request
 
+### Development Environment
+
+**Installing dependencies:**
+- For reproducible builds: `make install` (uses `requirements-lock.txt`)
+- For development: `make install-dev` (uses `requirements.txt` + dev deps from `pyproject.toml`)
+
+**Note on dev dependencies:** Dev dependencies are currently specified in `pyproject.toml` under `[project.optional-dependencies]`. For exact reproducibility of dev environment, consider maintaining a `requirements-dev-lock.txt` in the future.
+
 ### Code Style
 
 - Follow PEP 8 for Python code
