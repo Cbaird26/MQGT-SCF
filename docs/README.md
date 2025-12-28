@@ -14,7 +14,8 @@ make test       # Run test suite
 make reproduce  # Reproduce results
 ```
 
-> **Golden test verified:** 2025-12-28 (Python 3.14.1) — `make install` and `make test` pass on clean environment.
+> **Golden test verified:** 2025-12-28 — `make install` and `make test` pass on clean environment.  
+> Python: 3.14.1 (main, Dec 2 2025) [Clang 17.0.0] — Note: This may be a development/pre-release version. For reproducibility, use Python 3.9-3.11 as tested in CI.
 
 ## Where to Read First
 
