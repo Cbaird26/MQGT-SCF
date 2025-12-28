@@ -1,0 +1,49 @@
+---
+description: "ToE Engineering: style, tests, safety, and reproducibility for code + experiments"
+globs: ["**/*.py", "**/*.ipynb", "**/*.js", "**/*.ts", "**/*.jsx", "**/*.tsx", "**/*.go", "**/*.rs", "**/*.java", "**/*.cpp", "**/*.c", "**/*.h"]
+alwaysApply: false
+---
+
+# Engineering Standards
+
+## General
+
+- Prefer small PR-sized changes; no sweeping refactors without a plan + checkpoints.
+
+- Add or update tests when behavior changes.
+
+- Keep functions/modules single-purpose; name for intent.
+
+## Reproducibility (research-grade)
+
+- Pin dependencies (lockfiles or exact versions).
+
+- Provide one-command setup (Makefile/task runner/script).
+
+- Use deterministic seeds in simulations; document seeds + configs.
+
+- Store experiment configs as files (YAML/JSON/TOML) rather than hardcoding.
+
+## Python defaults (if applicable)
+
+- Prefer `pyproject.toml` if the repo is modern Python.
+
+- Add type hints for public functions; consider mypy/pyright.
+
+- Use a linter/formatter (ruff/black) and enforce via CI or pre-commit.
+
+## JS/TS defaults (if applicable)
+
+- Prefer TypeScript for non-trivial logic.
+
+- Enforce lint + formatting (eslint/prettier) and CI checks.
+
+- Avoid implicit `any`; keep types explicit at module boundaries.
+
+## Notebooks
+
+- Minimize logic in notebooks; move reusable logic into importable modules.
+
+- Keep notebooks as "reports" that call code, not as the code itself.
+
+- Provide a clean-run guarantee (restart kernel → run all).

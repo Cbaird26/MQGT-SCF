@@ -1,0 +1,69 @@
+---
+description: "ToE Roadmap: perform repo audit → create prioritized improvement backlog + milestones"
+globs: ["**/*"]
+alwaysApply: false
+---
+
+# Repo Audit + Roadmap Playbook
+
+When asked to "improve the whole project" or when the repo feels messy, do this structured audit.
+
+## Step 1: Inventory (fast, factual)
+
+Produce a short "Project Map":
+
+- What problem the repo claims to solve (from README/paper)
+
+- Primary deliverables (paper PDF/MD/LaTeX, library, CLI, notebooks, site, etc.)
+
+- Key directories and what they contain
+
+- Current build/run path (how to reproduce anything)
+
+## Step 2: Identify gaps (make it concrete)
+
+Check for:
+
+- Missing basics: LICENSE, README clarity, CONTRIBUTING, CODE_OF_CONDUCT, SECURITY, CITATION.cff (if academic)
+
+- Reproducibility: env files (requirements/pyproject/package-lock), Dockerfile, Makefile/task runner
+
+- CI: lint/test/build/docs build pipelines
+
+- Tests: unit tests + minimal integration tests
+
+- Docs IA: glossary, symbol index, "how to run experiments"
+
+- Release hygiene: versioning, changelog, tags, artifacts
+
+## Step 3: Backlog (prioritized)
+
+Create a backlog with 3 tiers:
+
+- P0 (must-fix): broken builds, missing install path, missing license, security risks, unreproducible results
+
+- P1 (high leverage): docs restructure, CI automation, test harness, type checking, refactors that reduce confusion
+
+- P2 (nice-to-have): website polish, diagrams, demos, examples, performance work
+
+Each item must include:
+
+- Outcome (what "done" means)
+
+- Smallest implementation path
+
+- Files likely touched
+
+- Estimated risk (low/med/high)
+
+## Step 4: Milestones
+
+Bundle backlog into milestones like:
+
+- "Repo Baseline": build + test + docs + license
+
+- "Reproducible ToE": repeatable experiments + pinned deps
+
+- "Readable ToE": glossary/symbol index + navigation + consistent terminology
+
+- "Releaseable ToE": versioned artifacts + CI publishing

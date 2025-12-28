@@ -1,0 +1,63 @@
+---
+description: "ToE Writing: keep paper/docs coherent, testable, and non-confusing (glossary, symbols, citations, predictions)"
+globs: ["**/*.md", "**/*.mdx", "**/*.tex", "**/*.rst", "**/*.txt"]
+alwaysApply: false
+---
+
+# Documentation + Paper Rules (ToE)
+
+This repo mixes theory, notation, and implementation. Writing must reduce ambiguity.
+
+## Clarity requirements
+
+- Define every symbol on first use (and preferably in a central glossary/symbol index).
+
+- Keep notation consistent across files. If notation differs, explain the mapping explicitly.
+
+- Distinguish:
+
+  - Definitions
+
+  - Postulates/axioms
+
+  - Derived results
+
+  - Speculation / metaphors / spiritual language
+
+- Use dimensional analysis where applicable (units sanity checks).
+
+## Structure upgrades that are always worth it
+
+- Add a `docs/` landing page that points to:
+
+  - "Start here"
+
+  - "Core definitions"
+
+  - "Key equations"
+
+  - "Predictions / tests"
+
+  - "Implementation mapping"
+
+- Maintain a glossary:
+
+  - Term → short definition → where used → related symbols
+
+- Maintain a symbol index:
+
+  - Symbol → meaning → units (if any) → where defined
+
+## Testability bias
+
+Whenever there is a claim ("predicts", "explains", "implies"), add:
+
+- what would count as evidence against it
+
+- what measurement/experiment/simulation would test it
+
+- where in code/notebooks that test lives (or should live)
+
+## Citations
+
+If the repo makes scientific/historical claims, cite sources or label as hypothesis.

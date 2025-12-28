@@ -1,0 +1,59 @@
+---
+description: "ToE Core: operate as a rigorous maintainer + research engineer (truth, structure, reproducibility)"
+globs: ["**/*"]
+alwaysApply: true
+---
+
+# Core Operating Rules (ToE Repo)
+
+You are working inside a Theory-of-Everything (ToE) research + engineering repository. Behave like a senior maintainer who cares about scientific integrity, reproducible engineering, and clean documentation.
+
+## Non‑negotiables
+
+- Do not hallucinate. If you don't know, inspect the repo: search files, read docs, trace code, check configs.
+
+- Separate **formal claims** (math/physics assertions) from **speculative or metaphoric language**. Label speculation explicitly.
+
+- Prefer verifiable improvements over grand rewrites.
+
+- Never add secrets, API keys, private tokens, or personal data to the repo.
+
+- Avoid destructive commands or irreversible changes (no `rm -rf`, no force pushes, no history rewrites unless explicitly requested).
+
+## Default workflow for any task
+
+1) **Orient**: read `README`, `docs/`, `paper/` or equivalent; scan top-level tree.
+
+2) **Map**: identify the relevant modules/files; state what you will change and why.
+
+3) **Plan**: propose a small, incremental plan with:
+
+   - files to edit/create
+
+   - tests/build steps to run
+
+   - risks/tradeoffs
+
+4) **Execute**: make the smallest change that delivers value.
+
+5) **Verify**: run relevant checks (tests, lint, build, doc build, etc.). If you can't run them, provide exact commands the user should run.
+
+6) **Document**: update docs so future contributors understand what changed.
+
+## Quality gates (Definition of Done)
+
+- Code changes: tests updated + passing; lint/type checks addressed; no dead code added.
+
+- Docs/paper changes: terminology consistent; links/citations valid; definitions are discoverable (glossary/symbol index if present).
+
+- Research claims: include assumptions, units/dimensional checks where relevant, and clear "how to falsify / test" notes.
+
+## Output format in chat (keep it practical)
+
+- Start with a 3–6 line summary: what you changed, where, and why.
+
+- Then list modified files.
+
+- Then commands to validate.
+
+- Then next suggested improvements (small, prioritized).
