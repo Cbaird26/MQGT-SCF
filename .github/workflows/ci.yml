@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11"]
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+        cache: 'pip'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install -r requirements.txt
+    
+    - name: Verify core dependencies
+      run: |
+        python -c "import numpy, scipy, matplotlib, pandas; print('Core dependencies OK')" || exit 1
+    
+    - name: Check Python syntax (compileall)
+      run: |
+        python -m compileall code/ -q || exit 1
+        echo "✓ All Python files compile successfully"
+    
+    - name: Verify code imports
+      run: |
+        python -c "
+        import sys
+        sys.path.insert(0, 'code')
+        # Try importing main modules (graceful if they don't exist yet)
+        try:
+            import inference
+            print('✓ inference module imports OK')
+        except ImportError:
+            print('⚠ inference module not found (expected if not yet implemented)')
+        try:
+            import simulations
+            print('✓ simulations module imports OK')
+        except ImportError:
+            print('⚠ simulations module not found (expected if not yet implemented)')
+        " || exit 1
+    
+    - name: Run tests
+      run: |
+        if [ -d "tests" ]; then
+          python -m pytest tests/ -v --tb=short || exit 1
+        else
+          echo "⚠ No tests directory found. Tests will be required once test harness is added."
+        fi
+    
+    - name: Check code style (basic)
+      run: |
+        python -m pip install flake8 || true
+        if command -v flake8 &> /dev/null; then
+          python -m flake8 code/ --count --select=E9,F63,F7,F82 --show-source --statistics || exit 1
+        else
+          echo "⚠ Flake8 not installed, skipping style check"
+        fi
+
