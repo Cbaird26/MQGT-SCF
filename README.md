@@ -84,6 +84,9 @@ pip install -r requirements-lock.txt
 git clone https://github.com/Cbaird26/MQGT-SCF.git
 cd MQGT-SCF
 pip install -r requirements.txt
+
+# Or install in editable mode with dev dependencies
+pip install -e ".[dev]"
 ```
 
 ### Run Tests
