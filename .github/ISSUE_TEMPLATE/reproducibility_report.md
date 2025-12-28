@@ -24,8 +24,11 @@ assignees: ''
 
 **Python Environment:**
 - Python version: 
+- Python full version: `python -c "import sys; print(sys.version)"`
+- Python executable: `which python` or `where python`
 - Installation method: [ ] pip [ ] conda [ ] venv [ ] system [ ] other: ___________
 - Virtual environment: [ ] Yes [ ] No
+- pip version: `pip -V`
 
 **Dependencies:**
 - Install command used: 
