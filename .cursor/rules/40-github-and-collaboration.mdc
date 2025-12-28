@@ -1,0 +1,31 @@
+---
+description: "ToE Collaboration: issues, PR hygiene, versioning, and automation expectations"
+globs: [".github/**/*", "**/*"]
+alwaysApply: false
+---
+
+# GitHub + Collaboration Rules
+
+## PR/Change hygiene
+
+- Every change should explain: motivation → approach → verification.
+
+- Prefer conventional commit messages if the repo uses them; otherwise keep commits descriptive.
+
+## CI expectations
+
+- CI should run: lint, tests, basic build, and (if docs exist) docs build.
+
+- Add caching and keep pipelines fast.
+
+## Security hygiene
+
+- Enable dependency scanning and secret scanning where possible.
+
+- Never commit credentials. If found, remove and rotate (document the incident).
+
+## Releaseability
+
+- If the repo produces artifacts (paper PDF, docs site, packages), automate builds.
+
+- Keep a CHANGELOG and tag versions for major milestones.
