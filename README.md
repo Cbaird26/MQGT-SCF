@@ -69,10 +69,18 @@ This repository contains multiple related papers and supporting materials:
 
 ### Installation
 
+**For reproducibility (exact versions):**
 ```bash
 git clone https://github.com/Cbaird26/MQGT-SCF.git
 cd MQGT-SCF
-pip install -r code/requirements.txt
+pip install -r requirements-lock.txt
+```
+
+**For development (latest compatible versions):**
+```bash
+git clone https://github.com/Cbaird26/MQGT-SCF.git
+cd MQGT-SCF
+pip install -r requirements.txt
 ```
 
 ### Reproduce Results
