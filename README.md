@@ -76,6 +76,8 @@ cd MQGT-SCF
 pip install -r requirements-lock.txt
 ```
 
+> **Note:** `requirements-lock.txt` is generated from Python 3.11 on 2025-12-28. For exact reproduction, use the lockfile. To regenerate: `pip freeze > requirements-lock.txt` (from a clean environment with `requirements.txt` installed).
+
 **For development (latest compatible versions):**
 ```bash
 git clone https://github.com/Cbaird26/MQGT-SCF.git

@@ -26,6 +26,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         python -m pip install -r requirements.txt
+        python -m pip install pytest pytest-cov
     
     - name: Verify core dependencies
       run: |
@@ -56,10 +57,12 @@ jobs:
     
     - name: Run tests
       run: |
+        python -m pip install pytest pytest-cov || true
         if [ -d "tests" ]; then
           python -m pytest tests/ -v --tb=short || exit 1
         else
           echo "⚠ No tests directory found. Tests will be required once test harness is added."
+          exit 1  # Fail if no tests directory (tests are now required)
         fi
     
     - name: Check code style (basic)
