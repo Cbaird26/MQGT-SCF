@@ -1,46 +1,55 @@
 # MQGT-SCF Documentation
 
-## Volume 0: Overview & Roadmap
+**Start Here** — Navigate the theory, evidence, and implementation.
 
-**File:** [`MQGT_SCF_Volume_0_Overview.pdf`](MQGT_SCF_Volume_0_Overview.pdf)
+## What is MQGT-SCF?
 
-This document serves as the navigational front door to the complete MQGT-SCF research collection. It provides:
+MQGT-SCF (Merged Quantum Gauge and Scalar Consciousness Framework) is an effective field theory extension of the Standard Model and General Relativity that incorporates scalar fields encoding consciousness-like and ethical structures. The framework is formulated operationally, with testable predictions across multiple experimental channels.
 
-- Clean title page and scope statement
-- Volume map (Volumes I–III with page ranges and file sizes)
-- "How to read" guidance
-- Suggested reading pathways with page pointers
-- Curated section marker index
-- Full structural marker index (Appendix A)
+## Quick Start
 
-**Purpose:** This overview is purely navigational—no content rewriting, no deletions, no equation modifications. It serves as the entry point for accessing the three-volume corpus.
+```bash
+make install    # Install dependencies (reproducible)
+make test       # Run test suite
+make reproduce  # Reproduce results
+```
 
-## Three-Volume Corpus
+## Where to Read First
 
-The complete research collection is organized into three volumes:
+### 📘 Volume 0: Overview & Roadmap
+**[MQGT_SCF_Volume_0_Overview.pdf](MQGT_SCF_Volume_0_Overview.pdf)** — Navigational front door to the complete research collection (~4,824 pages). Start here for the full corpus.
 
-1. **Volume I — Foundations & Core Formalism** (~2,170 pages)
-2. **Volume II — Proofs, Constraints, Extensions & Computation** (~1,448 pages)
-3. **Volume III — Interpretation, Applications & AI** (~1,206 pages)
+### 📐 Core Theory
+- **[Lagrangian](../theory/lagrangian.md)** — Unified Lagrangian formulation
+- **[Field Equations](../theory/field_equations.md)** — Field equations and dynamics
+- **[Glossary](../theory/glossary.md)** — Notation and terminology
+- **[Symbol Index](../theory/symbol_index.md)** — Quick reference for reviewers
 
-**Total:** ~4,824 pages of preserved research corpus
+## Reproducibility & Evidence
 
-## Accessing the Full Collection
+- **[Reproduction Script](../reproduce_all.py)** — One-command reproduction: `python reproduce_all.py`
+- **[Data Constraints](../data/)** — Experimental data and constraints
+- **[Code Implementation](../code/)** — Computational implementations
 
-The complete, unmodified research corpus is available through:
+## How to Cite
 
-- **Canonical Archive (DOI):** [Zenodo Record 18050570](https://zenodo.org/records/18050570)
-- **Library Mirror (Full Corpus):** [Internet Archive](https://archive.org/details/mqgt-scf-research-collection-full)
+**DOI:** [10.5281/zenodo.18012506](https://zenodo.org/records/18050570)
 
-This GitHub repository links to these authoritative sources rather than mirroring large PDF files directly.
+See [CITATION.cff](../CITATION.cff) for automatic citation.
 
-## Structured Edition
+## Questions & Issues
 
-The three-volume structured edition is maintained locally in the `structural_working/` directory (outside this repository) to keep the repository lightweight. Volume 0 serves as the navigational guide to access the full collection.
+- **Bug reports:** Use [bug report template](../.github/ISSUE_TEMPLATE/bug_report.md)
+- **Research claims:** Use [research claim template](../.github/ISSUE_TEMPLATE/research_claim.md)
+- **Reproducibility:** Use [reproducibility report template](../.github/ISSUE_TEMPLATE/reproducibility_report.md)
+- **Documentation:** Use [documentation issue template](../.github/ISSUE_TEMPLATE/documentation.md)
 
-## Canonical Archive
+## Full Research Collection
 
-The complete, unmodified corpus is preserved in:
-- **Zenodo** (canonical DOI archive with versioning)
-- **Internet Archive** (public library mirror for long-term access)
-- **Canonical directory** (local frozen copy for reference)
+The complete three-volume corpus (~4,824 pages) is available at:
+- **Zenodo (DOI):** [10.5281/zenodo.18012506](https://zenodo.org/records/18050570)
+- **Internet Archive:** [Full Corpus](https://archive.org/details/mqgt-scf-research-collection-full)
+
+---
+
+**Next Steps:** Read Volume 0 overview, then dive into core theory pages based on your interest.
