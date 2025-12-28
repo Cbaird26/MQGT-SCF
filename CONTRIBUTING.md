@@ -27,6 +27,31 @@ Thank you for your interest in contributing to the MQGT-SCF research program!
 - Add docstrings to functions
 - Include unit tests for new functionality
 
+### Test Philosophy
+
+Tests in this repository follow strict guidelines to keep the test suite fast and reliable:
+
+- **Fast execution**: Tests must complete in seconds, not minutes. No long-running computations.
+- **Fixed seeds**: Use deterministic random seeds (e.g., `seed=42`) for reproducibility.
+- **No network calls**: Tests must not require internet access or external services.
+- **No large data**: Avoid downloading or generating large datasets. Use minimal synthetic data.
+- **Basic invariants**: Focus on checking that outputs are valid (no NaNs, correct types, reasonable bounds) rather than exact numerical values.
+- **Isolated**: Each test should be independent and not rely on state from other tests.
+
+**Anti-patterns to avoid:**
+- ❌ Tests that train models or run full simulations
+- ❌ Tests that download data from the internet
+- ❌ Tests that take more than a few seconds
+- ❌ Tests without fixed seeds (non-deterministic)
+- ❌ Tests that modify global state
+
+**Good test examples:**
+- ✅ Import verification
+- ✅ Function signature checks
+- ✅ Output type and shape validation
+- ✅ Basic mathematical invariants
+- ✅ Small synthetic data with fixed seeds
+
 ### Documentation
 
 - Update README.md if adding major features

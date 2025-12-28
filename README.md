@@ -5,6 +5,7 @@
 [![Zenodo](https://zenodo.org/badge/DOI/10.5281/zenodo.18012506.svg)](https://zenodo.org/records/18050570)
 [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC--BY--4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![CI](https://github.com/Cbaird26/MQGT-SCF/workflows/CI/badge.svg)](https://github.com/Cbaird26/MQGT-SCF/actions)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18012506-blue)](https://zenodo.org/records/18050570)
 
 ## Overview
 
@@ -83,6 +84,19 @@ pip install -r requirements-lock.txt
 git clone https://github.com/Cbaird26/MQGT-SCF.git
 cd MQGT-SCF
 pip install -r requirements.txt
+```
+
+### Run Tests
+
+```bash
+# Install test dependencies
+pip install pytest pytest-cov
+
+# Run all tests
+pytest tests/ -v
+
+# Or with coverage
+pytest tests/ --cov=code --cov-report=html
 ```
 
 ### Reproduce Results
