@@ -60,10 +60,10 @@ representative at an online or offline event.
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the community leaders responsible for enforcement by:
 
-- Opening a GitHub issue with the `code-of-conduct` label: https://github.com/Cbaird26/MQGT-SCF/issues/new?labels=code-of-conduct
-- Or contacting the repository maintainers directly via GitHub
+- **Private contact (recommended)**: Contact repository maintainers directly via GitHub (see maintainer profiles for contact information)
+- **Alternative**: Open a private GitHub issue with the `code-of-conduct` label if private contact is not possible
 
-All complaints will be reviewed and investigated promptly and fairly.
+All complaints will be reviewed and investigated promptly and fairly. We respect privacy and will handle reports confidentially.
 
 All community leaders are obligated to respect the privacy and security of the
 reporter of any incident.
