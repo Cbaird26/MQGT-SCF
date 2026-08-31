@@ -34,7 +34,7 @@ jobs:
     
     - name: Check Python syntax (compileall)
       run: |
-        python -m compileall code/ -q || exit 1
+        python -m compileall code/ scripts/ reproduce_all.py -q || exit 1
         echo "✓ All Python files compile successfully"
     
     - name: Verify code imports
@@ -64,6 +64,9 @@ jobs:
           echo "⚠ No tests directory found. Tests will be required once test harness is added."
           exit 1  # Fail if no tests directory (tests are now required)
         fi
+
+    - name: Run fail-closed reproduction pipeline
+      run: python reproduce_all.py --ci
     
     - name: Check code style (basic)
       run: |
@@ -73,4 +76,3 @@ jobs:
         else
           echo "⚠ Flake8 not installed, skipping style check"
         fi
-

@@ -240,7 +240,10 @@ def main():
     args = ap.parse_args()
 
     outdir = Path(args.out)
-    digitized_dir = str((Path(__file__).resolve().parent/"digitized").resolve())
+    outdir.mkdir(parents=True, exist_ok=True)
+    digitized_dir = str(
+        (Path(__file__).resolve().parents[2] / "data" / "processed").resolve()
+    )
 
     cfg = default_config(digitized_dir)
     if args.config:

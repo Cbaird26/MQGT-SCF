@@ -7,7 +7,7 @@
 - ✅ Complete reproducibility package
 - ✅ Theory documentation extracted
 - ✅ Professional repository structure
-- ✅ Zenodo archival (DOI: 10.5281/zenodo.18012506)
+- ✅ Historical Zenodo version archived (version DOI: 10.5281/zenodo.18012506)
 
 ## Short Term (Next 3-6 months)
 
@@ -97,4 +97,3 @@ See [CONTRIBUTING.md](../CONTRIBUTING.md) for how to contribute to this research
 ---
 
 **Last Updated:** December 22, 2025
-

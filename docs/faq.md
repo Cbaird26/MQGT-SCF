@@ -6,10 +6,10 @@
 A: Merged Quantum Gauge and Scalar Consciousness Framework. An effective field theory extension that incorporates scalar fields encoding consciousness-like and ethical structures.
 
 **Q: Is this peer-reviewed?**  
-A: The repository is prepared for peer review. It has been archived on Zenodo (DOI: 10.5281/zenodo.18012506) and is ready for arXiv submission.
+A: No peer-reviewed status is asserted here. The research corpus is archived on Zenodo; Part 0 is the current technical reference statement.
 
 **Q: How do I cite this?**  
-A: Use the Zenodo DOI: 10.5281/zenodo.18012506. See [CITATION.cff](../CITATION.cff) for machine-readable citation.
+A: Use the stable concept DOI [10.5281/zenodo.14019809](https://doi.org/10.5281/zenodo.14019809). For exact-version work, use [10.5281/zenodo.21944514](https://doi.org/10.5281/zenodo.21944514). See [CITATION.cff](../CITATION.cff) for machine-readable citation.
 
 ## Theory
 
@@ -42,7 +42,7 @@ A: QRNG tests, microtubule coherence measurements, neural entanglement detection
 A: Warp-5A introduces $\Phi_c$, Warp-5B develops $E$ and measurement mechanisms, unified ToE provides operational constraints and testable predictions.
 
 **Q: Which paper should I read first?**  
-A: Start with `papers/unified_ToE/paper.pdf` for the operational framework. Warp-5A and Warp-5B provide foundational concepts.
+A: Read Part 0, *Technical Monograph*, in the canonical Zenodo corpus. The papers in this repository, including `papers/unified_ToE/`, are historical provenance.
 
 **Q: Where is the full 4,824-page ToE?**  
 A: In `theory/ToE_papers/` directory. Key equations are extracted to `theory/` markdown files.
@@ -83,4 +83,3 @@ A: This is currently independent research. Funding opportunities may arise as th
 ---
 
 **Have a question not answered here?** Open an issue on GitHub or contact the author.
-

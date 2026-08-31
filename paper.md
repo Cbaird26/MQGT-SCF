@@ -1,8 +1,14 @@
 # Operational Constraints on Ethically-Weighted Quantum Measurement: A Multi-Channel Effective Field Theory Analysis
 
+> **Historical Born-deformation paper; non-canonical.** This document is
+> retained for provenance and reproduction of the earlier operational
+> proposal. Part 0, *Technical Monograph*, is the sole current MQGT-SCF physics
+> reference, and this paper's endpoint must not be attributed to Part 0.
+
 **Author:** Christopher Michael Baird  
 **GitHub:** https://github.com/Cbaird26/MQGT-SCF  
-**Zenodo DOI:** 10.5281/zenodo.18012506  
+**Historical version DOI:** 10.5281/zenodo.18012506
+
 **License:** CC-BY-4.0
 
 ---
@@ -185,4 +191,3 @@ python mqgt_joint_harness.py run --config joint_config_template.json
 ---
 
 **For complete theoretical foundation, see `theory/ToE_papers/` directory.**
-

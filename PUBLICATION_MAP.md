@@ -4,20 +4,22 @@ This document explains where to find different versions and components of the MQ
 
 ## Article Channels
 
-**Core Article (Operational Constraints):**
+**Historical Article (Operational Born-Deformation Constraints):**
 - **arXiv:** Submitted (awaiting endorsement)
 - **viXra:** Submitted
 - **Location:** `papers/unified_ToE/` in this repository
 
-These channels host the concise, article-scale presentation of the framework with experimental constraints.
+These channels preserve a historical article-scale proposal. They do not define the current Part 0 framework.
 
 ## Canonical Archive
 
-**Zenodo (DOI):** [https://zenodo.org/records/18050570](https://zenodo.org/records/18050570)
+**Stable concept DOI:** [10.5281/zenodo.14019809](https://doi.org/10.5281/zenodo.14019809)
+
+**Pinned version DOI:** [10.5281/zenodo.21944514](https://doi.org/10.5281/zenodo.21944514)
 
 - Versioned, persistent identifier
 - Complete research corpus with metadata
-- Canonical reference for citation
+- Part 0 inside the corpus is the sole current physics reference statement
 - Includes all supporting materials
 
 ## Library Mirror
@@ -47,7 +49,7 @@ The structured volumes are maintained locally and accessible through Volume 0. T
 ## Where to Go for What
 
 - **Quick overview:** Start with Volume 0 (this repository)
-- **Core article:** arXiv/viXra or `papers/unified_ToE/`
+- **Historical Born-deformation article:** arXiv/viXra or `papers/unified_ToE/`
 - **Full corpus (canonical):** Zenodo DOI
 - **Full corpus (library access):** Internet Archive
 - **Structured reading:** Volume 0 → Volumes I–III
@@ -56,4 +58,3 @@ The structured volumes are maintained locally and accessible through Volume 0. T
 ## Citation
 
 For citation of the research program, use the Zenodo DOI as the canonical reference. For citation of specific results, refer to the corresponding article or volume as appropriate.
-

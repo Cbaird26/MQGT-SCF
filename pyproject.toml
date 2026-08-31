@@ -58,8 +58,9 @@ dev = [
 Homepage = "https://github.com/Cbaird26/MQGT-SCF"
 Documentation = "https://github.com/Cbaird26/MQGT-SCF#readme"
 Repository = "https://github.com/Cbaird26/MQGT-SCF"
-Zenodo = "https://zenodo.org/records/18050570"
-DOI = "10.5281/zenodo.18012506"
+Zenodo = "https://doi.org/10.5281/zenodo.14019809"
+Pinned-Version = "https://doi.org/10.5281/zenodo.21944514"
+DOI = "10.5281/zenodo.14019809"
 
 # Tool configurations
 [tool.pytest.ini_options]
@@ -114,4 +115,3 @@ warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = false  # Start lenient, tighten later
 ignore_missing_imports = true  # For optional dependencies
-

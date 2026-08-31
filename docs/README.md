@@ -19,8 +19,12 @@ make reproduce  # Reproduce results
 
 ## Where to Read First
 
-### 📘 Volume 0: Overview & Roadmap
-**[MQGT_SCF_Volume_0_Overview.pdf](MQGT_SCF_Volume_0_Overview.pdf)** — Navigational front door to the complete research collection (~4,824 pages). Start here for the full corpus.
+### Part 0: Technical Monograph
+
+Part 0 in the [canonical Zenodo corpus](https://doi.org/10.5281/zenodo.14019809)
+is the sole current physics reference statement. The local
+[Volume 0 overview](MQGT_SCF_Volume_0_Overview.pdf) is a historical navigation
+aid, not a competing canonical object.
 
 ### 📐 Core Theory
 - **[Lagrangian](../theory/lagrangian.md)** — Unified Lagrangian formulation
@@ -36,7 +40,9 @@ make reproduce  # Reproduce results
 
 ## How to Cite
 
-**DOI:** [10.5281/zenodo.18012506](https://zenodo.org/records/18050570)
+**Stable concept DOI:** [10.5281/zenodo.14019809](https://doi.org/10.5281/zenodo.14019809)
+
+**Pinned version DOI:** [10.5281/zenodo.21944514](https://doi.org/10.5281/zenodo.21944514)
 
 See [CITATION.cff](../CITATION.cff) for automatic citation.
 
@@ -50,9 +56,10 @@ See [CITATION.cff](../CITATION.cff) for automatic citation.
 ## Full Research Collection
 
 The complete three-volume corpus (~4,824 pages) is available at:
-- **Zenodo (DOI):** [10.5281/zenodo.18012506](https://zenodo.org/records/18050570)
+- **Zenodo concept DOI:** [10.5281/zenodo.14019809](https://doi.org/10.5281/zenodo.14019809)
+- **Pinned corpus version:** [10.5281/zenodo.21944514](https://doi.org/10.5281/zenodo.21944514)
 - **Internet Archive:** [Full Corpus](https://archive.org/details/mqgt-scf-research-collection-full)
 
 ---
 
-**Next Steps:** Read Volume 0 overview, then dive into core theory pages based on your interest.
+**Next Steps:** Read Part 0 first. Use the repository papers and extracted notes as historical provenance.

@@ -1,0 +1,3 @@
+How to Cite and Where to Start
+
+For citation, use the stable corpus concept DOI 10.5281/zenodo.14019809 (https://doi.org/10.5281/zenodo.14019809). For exact-version work, cite 10.5281/zenodo.21944514 (https://doi.org/10.5281/zenodo.21944514). Part 0, Technical Monograph, inside that corpus is the sole current physics reference statement. Volume 0 in this repository and the bundled papers are historical navigation/provenance artifacts. Code, documentation, and reproducibility materials are available at https://github.com/Cbaird26/MQGT-SCF.

@@ -1,6 +1,13 @@
 MQGT Paper Package (arXiv-ready)
 ================================
 
+HISTORICAL STATUS
+-----------------
+This is the historical operational Born-deformation paper. It is retained for
+provenance and is not the current MQGT-SCF reference statement. Part 0,
+Technical Monograph, controls wherever this package conflicts with it. Do not
+attribute this paper's ethically weighted Born-rule endpoint to Part 0.
+
 This folder contains:
 - main.tex            : Manuscript
 - supplement.tex      : Supplementary material

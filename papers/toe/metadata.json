@@ -1,6 +1,8 @@
 {
   "type": "paper",
   "year": 2025,
-  "format": "pdf"
+  "format": "pdf",
+  "status": "historical_noncanonical",
+  "canonical": false,
+  "superseded_by": "Part 0, Technical Monograph; https://doi.org/10.5281/zenodo.14019809"
 }
-

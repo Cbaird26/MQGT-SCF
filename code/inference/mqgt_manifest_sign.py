@@ -18,6 +18,8 @@ Examples:
 
 """
 
+from __future__ import annotations
+
 import argparse, hashlib, json, os
 from pathlib import Path
 from datetime import datetime

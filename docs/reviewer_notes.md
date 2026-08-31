@@ -82,7 +82,7 @@ Please cite using the Zenodo DOI:
   author = {Baird, Christopher Michael},
   title = {MQGT-SCF: Operational Constraints on Ethically-Weighted Quantum Measurement},
   year = {2025},
-  doi = {10.5281/zenodo.18012506}
+  doi = {10.5281/zenodo.14019809}
 }
 ```
 
@@ -93,4 +93,3 @@ For questions about reproducibility or technical details, please open an issue o
 ---
 
 **Thank you for reviewing this work.**
-

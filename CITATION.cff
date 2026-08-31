@@ -6,13 +6,16 @@ authors:
 title: "MQGT-SCF: Merged Quantum Gauge and Scalar Consciousness Framework"
 version: 1.0.0
 date-released: 2025-12-22
-doi: 10.5281/zenodo.18012506
+doi: 10.5281/zenodo.14019809
 repository-code: "https://github.com/Cbaird26/MQGT-SCF"
 license: CC-BY-4.0
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21944514
+    description: Exact corpus version pinned by this repository
 keywords:
   - quantum measurement
   - effective field theory
   - consciousness
   - Bayesian inference
   - reproducibility
-
