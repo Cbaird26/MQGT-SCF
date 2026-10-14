@@ -47,7 +47,7 @@ MQGT-SCF/
 ### 1. Push to GitHub (5 minutes)
 
 ```bash
-cd /Users/christophermichaelbaird/Downloads/MQGT-SCF
+cd ~/Downloads/MQGT-SCF
 
 # Create repository on GitHub first (see SETUP_GITHUB.md)
 # Then:
