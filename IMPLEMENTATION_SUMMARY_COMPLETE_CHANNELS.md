@@ -64,7 +64,7 @@ Extended `code/inference/fifth_force/falsification_dashboard.py` with:
 To push to GitHub (https://github.com/Cbaird26/MQGT-SCF):
 
 ```bash
-cd /Users/christophermichaelbaird/Downloads/MQGT-SCF
+cd ~/Downloads/MQGT-SCF
 git add code/inference/astrophysics/ code/inference/gravitational_waves/ code/inference/neutrinos/ code/inference/dark_matter/ code/inference/theorems/
 git add scripts/generate_*bounds.py
 git add docs/*channel.md docs/theorem_proofs_channel.md docs/comprehensive_test_catalog.md
@@ -76,5 +76,5 @@ git push origin main
 ## Access Options
 
 1. **GitHub**: Push to https://github.com/Cbaird26/MQGT-SCF (ChatGPT can access via GitHub)
-2. **Local Downloads**: Files are already in `/Users/christophermichaelbaird/Downloads/MQGT-SCF`
+2. **Local Downloads**: Files are already in `~/Downloads/MQGT-SCF`
 3. **ChatGPT File Upload**: Upload specific files to ChatGPT if needed
