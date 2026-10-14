@@ -17,7 +17,7 @@ Follow these steps to push your repository to GitHub.
 After creating the repository, GitHub will show you commands. Use these:
 
 ```bash
-cd /Users/christophermichaelbaird/Downloads/MQGT-SCF
+cd ~/Downloads/MQGT-SCF
 
 # Add all files
 git add .
