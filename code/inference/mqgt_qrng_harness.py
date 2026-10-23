@@ -35,6 +35,10 @@ from scipy.stats import norm
 
 HBARC_EVM = 1.973269804e-7  # (not used here; kept for consistency across project)
 
+# np.trapz was removed in newer NumPy releases; np.trapezoid (NumPy >= 2.0) is the
+# same trapezoid rule. Fall back to np.trapz only on older NumPy.
+_trapezoid = getattr(np, "trapezoid", None) or np.trapz
+
 def sha256_of_file(path: Path) -> str:
     """Compute SHA256 hash of a file.
     
@@ -111,11 +115,11 @@ def posterior_grid(
     logpost -= np.max(logpost)
     post = np.exp(logpost)
     # normalize
-    post /= np.trapz(post, etas)
+    post /= _trapezoid(post, etas)
     # CDF
     cdf = np.concatenate([[0.0], np.cumsum((post[:-1]+post[1:])*(etas[1:]-etas[:-1])/2)])
-    mean = float(np.trapz(etas*post, etas))
-    var = float(np.trapz((etas-mean)**2*post, etas))
+    mean = float(_trapezoid(etas*post, etas))
+    var = float(_trapezoid((etas-mean)**2*post, etas))
     median = float(np.interp(0.5, cdf, etas))
     lo = float(np.interp(0.025, cdf, etas))
     hi = float(np.interp(0.975, cdf, etas))
